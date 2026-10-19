@@ -1,0 +1,4 @@
+Model,Test n,ROC-AUC,Avg precision,Brier,Log loss,Threshold,Precision,Recall,F1
+Constant baseline,17637,0.5,0.196178,0.159252,0.499572,0.5,0.0,0.0,0.0
+Logistic Regression,17637,0.596328,0.25234,0.181961,0.550959,0.5,0.27973,0.059827,0.098571
+Gradient Boosting,17637,0.562236,0.230749,0.161622,0.503306,0.5,0.261194,0.010116,0.019477

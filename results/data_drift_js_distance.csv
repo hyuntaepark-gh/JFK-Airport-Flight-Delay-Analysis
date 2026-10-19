@@ -1,0 +1,5 @@
+Grouping,Compared with training,JS distance
+Carrier,Validation (Sep–Oct),0.03716010925125068
+Carrier,Test (Nov–Dec),0.02986282116201281
+Destination,Validation (Sep–Oct),0.02789492741578656
+Destination,Test (Nov–Dec),0.012631980546994825

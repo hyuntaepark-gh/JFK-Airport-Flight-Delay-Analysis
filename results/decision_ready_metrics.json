@@ -1,0 +1,387 @@
+{
+  "ablation": [
+    {
+      "Feature set": "Calendar only",
+      "Period": "Validation (Sep-Oct)",
+      "N": 17924,
+      "AP": 0.13737706784745232,
+      "ROC-AUC": 0.4868350791675977,
+      "Brier": 0.15171706264708276
+    },
+    {
+      "Feature set": "Calendar only",
+      "Period": "Holdout (Nov-Dec)",
+      "N": 17637,
+      "AP": 0.23236229751414186,
+      "ROC-AUC": 0.568410437242444,
+      "Brier": 0.1822592066338834
+    },
+    {
+      "Feature set": "Calendar + carrier",
+      "Period": "Validation (Sep-Oct)",
+      "N": 17924,
+      "AP": 0.16606101790543148,
+      "ROC-AUC": 0.5350368919658923,
+      "Brier": 0.15269222170530428
+    },
+    {
+      "Feature set": "Calendar + carrier",
+      "Period": "Holdout (Nov-Dec)",
+      "N": 17637,
+      "AP": 0.25513208110615165,
+      "ROC-AUC": 0.5989806924918282,
+      "Brier": 0.18081716438407489
+    },
+    {
+      "Feature set": "Calendar + destination",
+      "Period": "Validation (Sep-Oct)",
+      "N": 17924,
+      "AP": 0.17382803029679464,
+      "ROC-AUC": 0.5547855190710769,
+      "Brier": 0.1520463829879664
+    },
+    {
+      "Feature set": "Calendar + destination",
+      "Period": "Holdout (Nov-Dec)",
+      "N": 17637,
+      "AP": 0.24205890509668931,
+      "ROC-AUC": 0.5809898471879675,
+      "Brier": 0.18198012424916876
+    },
+    {
+      "Feature set": "All planning fields",
+      "Period": "Validation (Sep-Oct)",
+      "N": 17924,
+      "AP": 0.17179837248750104,
+      "ROC-AUC": 0.5511363464398663,
+      "Brier": 0.15334079346278337
+    },
+    {
+      "Feature set": "All planning fields",
+      "Period": "Holdout (Nov-Dec)",
+      "N": 17637,
+      "AP": 0.2523401984636132,
+      "ROC-AUC": 0.5963282035830241,
+      "Brier": 0.1819609253853109
+    }
+  ],
+  "subgroup_test_error": [
+    {
+      "Carrier": "B6",
+      "Test N": 6770,
+      "True late (15+)": 1540,
+      "Late recall": 0.990909090909091,
+      "False negative rate": 0.00909090909090909,
+      "False positive rate": 0.9783938814531549,
+      "Missed severe (60+)": 3,
+      "Severe flights": 448
+    },
+    {
+      "Carrier": "DL",
+      "Test N": 3306,
+      "True late (15+)": 465,
+      "Late recall": 0.6731182795698925,
+      "False negative rate": 0.32688172043010755,
+      "False positive rate": 0.6307638155579022,
+      "Missed severe (60+)": 34,
+      "Severe flights": 119
+    },
+    {
+      "Carrier": "AA",
+      "Test N": 2166,
+      "True late (15+)": 372,
+      "Late recall": 0.8198924731182795,
+      "False negative rate": 0.18010752688172044,
+      "False positive rate": 0.7480490523968785,
+      "Missed severe (60+)": 24,
+      "Severe flights": 125
+    },
+    {
+      "Carrier": "9E",
+      "Test N": 2028,
+      "True late (15+)": 523,
+      "Late recall": 0.9980879541108987,
+      "False negative rate": 0.0019120458891013384,
+      "False positive rate": 0.998671096345515,
+      "Missed severe (60+)": 1,
+      "Severe flights": 201
+    },
+    {
+      "Carrier": "MQ",
+      "Test N": 1219,
+      "True late (15+)": 247,
+      "Late recall": 1.0,
+      "False negative rate": 0.0,
+      "False positive rate": 1.0,
+      "Missed severe (60+)": 0,
+      "Severe flights": 96
+    },
+    {
+      "Carrier": "UA",
+      "Test N": 753,
+      "True late (15+)": 104,
+      "Late recall": 0.3557692307692307,
+      "False negative rate": 0.6442307692307693,
+      "False positive rate": 0.3559322033898305,
+      "Missed severe (60+)": 17,
+      "Severe flights": 30
+    },
+    {
+      "Carrier": "VX",
+      "Test N": 582,
+      "True late (15+)": 91,
+      "Late recall": 1.0,
+      "False negative rate": 0.0,
+      "False positive rate": 1.0,
+      "Missed severe (60+)": 0,
+      "Severe flights": 27
+    },
+    {
+      "Carrier": "US",
+      "Test N": 567,
+      "True late (15+)": 68,
+      "Late recall": 0.02941176470588236,
+      "False negative rate": 0.9705882352941176,
+      "False positive rate": 0.028056112224448898,
+      "Missed severe (60+)": 16,
+      "Severe flights": 16
+    }
+  ],
+  "validation_fixed_cutoff": 0.2760410373315508,
+  "hypothetical_cost": [
+    {
+      "Benefit/review-cost ratio": 2,
+      "Review share": 0.0,
+      "Reviews": 0,
+      "True late identified": 0,
+      "Recall": 0.0,
+      "Model net proxy per 1,000": 0.0,
+      "Random expected proxy per 1,000": 0.0
+    },
+    {
+      "Benefit/review-cost ratio": 2,
+      "Review share": 0.05,
+      "Reviews": 882,
+      "True late identified": 240,
+      "Recall": 0.06936416184971098,
+      "Model net proxy per 1,000": -22.792992005443104,
+      "Random expected proxy per 1,000": -30.387319070900862
+    },
+    {
+      "Benefit/review-cost ratio": 2,
+      "Review share": 0.1,
+      "Reviews": 1764,
+      "True late identified": 477,
+      "Recall": 0.13786127167630058,
+      "Model net proxy per 1,000": -45.92617792141521,
+      "Random expected proxy per 1,000": -60.774638141801724
+    },
+    {
+      "Benefit/review-cost ratio": 2,
+      "Review share": 0.2,
+      "Reviews": 3528,
+      "True late identified": 943,
+      "Recall": 0.2725433526011561,
+      "Model net proxy per 1,000": -93.0997335147701,
+      "Random expected proxy per 1,000": -121.54927628360345
+    },
+    {
+      "Benefit/review-cost ratio": 2,
+      "Review share": 0.3,
+      "Reviews": 5292,
+      "True late identified": 1402,
+      "Recall": 0.4052023121387283,
+      "Model net proxy per 1,000": -141.06707489935928,
+      "Random expected proxy per 1,000": -182.32391442540515
+    },
+    {
+      "Benefit/review-cost ratio": 2,
+      "Review share": 0.5,
+      "Reviews": 8819,
+      "True late identified": 2123,
+      "Recall": 0.6135838150289017,
+      "Model net proxy per 1,000": -259.28445880818737,
+      "Random expected proxy per 1,000": -303.83873796629786
+    },
+    {
+      "Benefit/review-cost ratio": 2,
+      "Review share": 1.0,
+      "Reviews": 17637,
+      "True late identified": 3460,
+      "Recall": 1.0,
+      "Model net proxy per 1,000": -607.643023189885,
+      "Random expected proxy per 1,000": -607.643023189885
+    },
+    {
+      "Benefit/review-cost ratio": 5,
+      "Review share": 0.0,
+      "Reviews": 0,
+      "True late identified": 0,
+      "Recall": 0.0,
+      "Model net proxy per 1,000": 0.0,
+      "Random expected proxy per 1,000": 0.0
+    },
+    {
+      "Benefit/review-cost ratio": 5,
+      "Review share": 0.05,
+      "Reviews": 882,
+      "True late identified": 240,
+      "Recall": 0.06936416184971098,
+      "Model net proxy per 1,000": 18.03027725803708,
+      "Random expected proxy per 1,000": -0.9555404056073163
+    },
+    {
+      "Benefit/review-cost ratio": 5,
+      "Review share": 0.1,
+      "Reviews": 1764,
+      "True late identified": 477,
+      "Recall": 0.13786127167630058,
+      "Model net proxy per 1,000": 35.21006973975166,
+      "Random expected proxy per 1,000": -1.9110808112146327
+    },
+    {
+      "Benefit/review-cost ratio": 5,
+      "Review share": 0.2,
+      "Reviews": 3528,
+      "True late identified": 943,
+      "Recall": 0.2725433526011561,
+      "Model net proxy per 1,000": 67.30169529965413,
+      "Random expected proxy per 1,000": -3.8221616224292654
+    },
+    {
+      "Benefit/review-cost ratio": 5,
+      "Review share": 0.3,
+      "Reviews": 5292,
+      "True late identified": 1402,
+      "Recall": 0.4052023121387283,
+      "Model net proxy per 1,000": 97.40885638147077,
+      "Random expected proxy per 1,000": -5.733242433643885
+    },
+    {
+      "Benefit/review-cost ratio": 5,
+      "Review share": 0.5,
+      "Reviews": 8819,
+      "True late identified": 2123,
+      "Recall": 0.6135838150289017,
+      "Model net proxy per 1,000": 101.83137721834778,
+      "Random expected proxy per 1,000": -9.554320676928477
+    },
+    {
+      "Benefit/review-cost ratio": 5,
+      "Review share": 1.0,
+      "Reviews": 17637,
+      "True late identified": 3460,
+      "Recall": 1.0,
+      "Model net proxy per 1,000": -19.107557974712254,
+      "Random expected proxy per 1,000": -19.107557974712254
+    },
+    {
+      "Benefit/review-cost ratio": 10,
+      "Review share": 0.0,
+      "Reviews": 0,
+      "True late identified": 0,
+      "Recall": 0.0,
+      "Model net proxy per 1,000": 0.0,
+      "Random expected proxy per 1,000": 0.0
+    },
+    {
+      "Benefit/review-cost ratio": 10,
+      "Review share": 0.05,
+      "Reviews": 882,
+      "True late identified": 240,
+      "Recall": 0.06936416184971098,
+      "Model net proxy per 1,000": 86.0690593638374,
+      "Random expected proxy per 1,000": 48.09742403654859
+    },
+    {
+      "Benefit/review-cost ratio": 10,
+      "Review share": 0.1,
+      "Reviews": 1764,
+      "True late identified": 477,
+      "Recall": 0.13786127167630058,
+      "Model net proxy per 1,000": 170.4371491750298,
+      "Random expected proxy per 1,000": 96.19484807309718
+    },
+    {
+      "Benefit/review-cost ratio": 10,
+      "Review share": 0.2,
+      "Reviews": 3528,
+      "True late identified": 943,
+      "Recall": 0.2725433526011561,
+      "Model net proxy per 1,000": 334.63740999036116,
+      "Random expected proxy per 1,000": 192.38969614619435
+    },
+    {
+      "Benefit/review-cost ratio": 10,
+      "Review share": 0.3,
+      "Reviews": 5292,
+      "True late identified": 1402,
+      "Recall": 0.4052023121387283,
+      "Model net proxy per 1,000": 494.8687418495209,
+      "Random expected proxy per 1,000": 288.58454421929156
+    },
+    {
+      "Benefit/review-cost ratio": 10,
+      "Review share": 0.5,
+      "Reviews": 8819,
+      "True late identified": 2123,
+      "Recall": 0.6135838150289017,
+      "Model net proxy per 1,000": 703.6911039292396,
+      "Random expected proxy per 1,000": 480.9197081386871
+    },
+    {
+      "Benefit/review-cost ratio": 10,
+      "Review share": 1.0,
+      "Reviews": 17637,
+      "True late identified": 3460,
+      "Recall": 1.0,
+      "Model net proxy per 1,000": 961.7848840505754,
+      "Random expected proxy per 1,000": 961.7848840505754
+    }
+  ],
+  "bootstrap": [
+    {
+      "Comparison": "Logistic - Boosting",
+      "Metric": "AP difference",
+      "Observed difference": 0.021591095395315285,
+      "Lower 95%": 0.005777025181356339,
+      "Upper 95%": 0.037159548794553916,
+      "Bootstrap samples": 350,
+      "Interval includes 0": false
+    },
+    {
+      "Comparison": "Logistic - Boosting",
+      "Metric": "ROC-AUC difference",
+      "Observed difference": 0.03409264007769652,
+      "Lower 95%": 0.012953036888365821,
+      "Upper 95%": 0.04991394555423589,
+      "Bootstrap samples": 350,
+      "Interval includes 0": false
+    },
+    {
+      "Comparison": "Logistic - Constant",
+      "Metric": "AP difference",
+      "Observed difference": 0.056161710058555664,
+      "Lower 95%": 0.042386670162116516,
+      "Upper 95%": 0.07007319948569632,
+      "Bootstrap samples": 350,
+      "Interval includes 0": false
+    },
+    {
+      "Comparison": "Logistic - Constant",
+      "Metric": "ROC-AUC difference",
+      "Observed difference": 0.09632820358302407,
+      "Lower 95%": 0.08012058005283719,
+      "Upper 95%": 0.10895881122855378,
+      "Bootstrap samples": 350,
+      "Interval includes 0": false
+    }
+  ],
+  "dashboard": {
+    "flight_count": 111279,
+    "observed_late_rate": 0.2133782993346494,
+    "test_logistic_ap": 0.2523401984636132,
+    "test_baseline_ap": 0.19617848840505756,
+    "test_calibrated_brier": 0.15670925387992896
+  }
+}

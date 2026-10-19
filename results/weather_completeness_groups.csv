@@ -1,0 +1,3 @@
+weather_complete,flights,late,late_rate,median_delay_min,late_rate_lower_95,late_rate_upper_95,Group
+False,20265,4435,0.21885023439427584,-1.0,0.21321114681876605,0.2245958919727348,At least one unavailable
+True,88340,18245,0.2065315825220738,-2.0,0.2038748861583608,0.20921380068384993,Visibility + wind available

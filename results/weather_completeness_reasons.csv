@@ -1,0 +1,4 @@
+weather_sample_status,flights,late_rate
+Included: visibility and wind,88340,0.2065315825220738
+Matched report: visibility missing,20249,0.21902316163761174
+Matched report: wind missing,16,0.0

@@ -1,0 +1,124 @@
+{
+  "source_schedule": {
+    "independent_file_found": false,
+    "unique_match_fraction": 0.0,
+    "used_in_analysis": false
+  },
+  "missing_dep_delay_count": 1863,
+  "monthly_missing_max_pct": 4.666904168151051,
+  "missing_lower_rate": 0.20980598315944607,
+  "missing_upper_rate": 0.22654768644578044,
+  "calibration_selected_on_october": "Platt",
+  "calibration_october_metrics": [
+    {
+      "Calibration": "Uncalibrated",
+      "October Brier": 0.1543004285122129,
+      "October LogLoss": 0.4917308955141668
+    },
+    {
+      "Calibration": "Platt",
+      "October Brier": 0.11373678903965832,
+      "October LogLoss": 0.3877941264630876
+    },
+    {
+      "Calibration": "Isotonic",
+      "October Brier": 0.1141237182354343,
+      "October LogLoss": 0.3883750722626324
+    }
+  ],
+  "calibration_nov_dec_metrics": [
+    {
+      "Calibration": "Uncalibrated",
+      "Selected by October": false,
+      "Test Brier": 0.1819609253853109,
+      "Test LogLoss": 0.5509588721251367,
+      "Test AP": 0.2523401984636132
+    },
+    {
+      "Calibration": "Platt",
+      "Selected by October": true,
+      "Test Brier": 0.15670925387992896,
+      "Test LogLoss": 0.4916649582083614,
+      "Test AP": 0.2523401984636132
+    },
+    {
+      "Calibration": "Isotonic",
+      "Selected by October": false,
+      "Test Brier": 0.15658437824450205,
+      "Test LogLoss": 0.4909061066895712,
+      "Test AP": 0.2394853173721233
+    }
+  ],
+  "lift_metrics": [
+    {
+      "Top population share": 0.05,
+      "Number reviewed": 882,
+      "Precision@K": 0.272108843537415,
+      "Recall@K": 0.06936416184971098,
+      "Lift@K": 1.3870473044709215
+    },
+    {
+      "Top population share": 0.1,
+      "Number reviewed": 1764,
+      "Precision@K": 0.27040816326530615,
+      "Recall@K": 0.13786127167630058,
+      "Lift@K": 1.378378258817978
+    },
+    {
+      "Top population share": 0.2,
+      "Number reviewed": 3528,
+      "Precision@K": 0.2672902494331066,
+      "Recall@K": 0.2725433526011561,
+      "Lift@K": 1.3624850084542488
+    },
+    {
+      "Top population share": 0.3,
+      "Number reviewed": 5292,
+      "Precision@K": 0.26492819349962204,
+      "Recall@K": 0.4052023121387283,
+      "Lift@K": 1.350444667269605
+    },
+    {
+      "Top population share": 0.5,
+      "Number reviewed": 8819,
+      "Precision@K": 0.2407302415239823,
+      "Recall@K": 0.6135838150289017,
+      "Lift@K": 1.2270980548434902
+    },
+    {
+      "Top population share": 1.0,
+      "Number reviewed": 17637,
+      "Precision@K": 0.19617848840505756,
+      "Recall@K": 1.0,
+      "Lift@K": 1.0
+    }
+  ],
+  "adjusted_aircraft_or": 4.6263780373210395,
+  "adjusted_aircraft_ci": [
+    4.2031438861261705,
+    5.092229608140515
+  ],
+  "adjusted_aircraft_clustered_p": 5.95386722710029e-215,
+  "conditional_quantiles": [
+    {
+      "Conditional quantile": 0.5,
+      "Train late flights": 17405,
+      "Holdout late flights": 3460,
+      "Model pinball loss": 16.903940713897246,
+      "Baseline pinball loss": 16.83135838150289,
+      "Empirical coverage": 0.5381502890173411,
+      "Nominal coverage": 0.5,
+      "Baseline quantile minutes": 45.0
+    },
+    {
+      "Conditional quantile": 0.9,
+      "Train late flights": 17405,
+      "Holdout late flights": 3460,
+      "Model pinball loss": 12.932705496763852,
+      "Baseline pinball loss": 13.066098265895953,
+      "Empirical coverage": 0.903757225433526,
+      "Nominal coverage": 0.9,
+      "Baseline quantile minutes": 142.0
+    }
+  ]
+}

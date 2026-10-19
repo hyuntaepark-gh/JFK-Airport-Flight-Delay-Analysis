@@ -1,0 +1,3 @@
+Term,Adjusted_OR,Lower_95,Upper_95,p_value_clustered,Exposure_n
+Visibility <3 miles,1.968913,1.534054,2.527042,0.0,4358
+Wind >=15 mph,1.307866,1.189206,1.438367,0.0,28761

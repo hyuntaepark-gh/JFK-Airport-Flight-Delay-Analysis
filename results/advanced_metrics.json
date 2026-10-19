@@ -1,0 +1,158 @@
+{
+  "repeat_aircraft_pairs": 24211,
+  "next_late_rate_previous_late": 0.5715451577801959,
+  "next_late_rate_previous_on_time": 0.22736790844898952,
+  "day_bootstrap_difference_95ci": [
+    0.3255261080682331,
+    0.3656995613863758
+  ],
+  "severity_test_metrics": [
+    {
+      "Target": "60+ min",
+      "Model": "Constant prior",
+      "Validation AP": 0.04268020531131444,
+      "Selected on validation": false,
+      "ROC-AUC": 0.5,
+      "AP": 0.06180189374610195,
+      "Brier": 0.058807651299078854
+    },
+    {
+      "Target": "60+ min",
+      "Model": "Direct logistic",
+      "Validation AP": 0.06250275060278998,
+      "Selected on validation": true,
+      "ROC-AUC": 0.6119389972294653,
+      "AP": 0.08806616085717053,
+      "Brier": 0.06920119862367735
+    },
+    {
+      "Target": "60+ min",
+      "Model": "Two-stage logistic",
+      "Validation AP": 0.062227591571107556,
+      "Selected on validation": false,
+      "ROC-AUC": 0.6131796667041837,
+      "AP": 0.08861446517086041,
+      "Brier": 0.0689432846977494
+    },
+    {
+      "Target": "120+ min",
+      "Model": "Constant prior",
+      "Validation AP": 0.015007810756527561,
+      "Selected on validation": false,
+      "ROC-AUC": 0.5,
+      "AP": 0.019787945795770256,
+      "Brier": 0.019588456686262922
+    },
+    {
+      "Target": "120+ min",
+      "Model": "Direct logistic",
+      "Validation AP": 0.023093734659049008,
+      "Selected on validation": true,
+      "ROC-AUC": 0.6019855434115321,
+      "AP": 0.029944708103135428,
+      "Brier": 0.022528207551126115
+    }
+  ],
+  "quantile_test_metrics": [
+    {
+      "Quantile": 0.5,
+      "Baseline constant (min)": 0.0,
+      "Model pinball loss": 6.169274819980722,
+      "Baseline pinball loss": 6.169274819980722,
+      "Observed holdout coverage": 0.6206270907750752,
+      "Nominal coverage": 0.5
+    },
+    {
+      "Quantile": 0.9,
+      "Baseline constant (min)": 54.0,
+      "Model pinball loss": 7.851478361093072,
+      "Baseline pinball loss": 7.987940125871746,
+      "Observed holdout coverage": 0.9158587061291603,
+      "Nominal coverage": 0.9
+    }
+  ],
+  "rolling_validation": [
+    {
+      "Training": "Jan\u2013May",
+      "Next month": "June",
+      "Train n": 44924,
+      "Validation n": 9229,
+      "Prevalence": 0.28995557481850687,
+      "AP": 0.3317150569222739,
+      "ROC-AUC": 0.5480629143944615,
+      "Brier": 0.20849324019910276
+    },
+    {
+      "Training": "Jan\u2013Jun",
+      "Next month": "July",
+      "Train n": 54153,
+      "Validation n": 9812,
+      "Prevalence": 0.3255197717081125,
+      "AP": 0.3880132621978957,
+      "ROC-AUC": 0.5769788917456858,
+      "Brier": 0.2173772960295352
+    },
+    {
+      "Training": "Jan\u2013Jul",
+      "Next month": "August",
+      "Train n": 63965,
+      "Validation n": 9890,
+      "Prevalence": 0.23700707785642064,
+      "AP": 0.30892500286563906,
+      "ROC-AUC": 0.598661033714492,
+      "Brier": 0.18646533751926803
+    },
+    {
+      "Training": "Jan\u2013Aug",
+      "Next month": "September",
+      "Train n": 73855,
+      "Validation n": 8816,
+      "Prevalence": 0.14609800362976408,
+      "AP": 0.18236450933562043,
+      "ROC-AUC": 0.5518851257582459,
+      "Brier": 0.15234937376788724
+    },
+    {
+      "Training": "Jan\u2013Sep",
+      "Next month": "October",
+      "Train n": 82671,
+      "Validation n": 9108,
+      "Prevalence": 0.1310935441370224,
+      "AP": 0.16989962658405383,
+      "ROC-AUC": 0.5569608953706279,
+      "Brier": 0.12943065478638902
+    }
+  ],
+  "weather_interaction": [
+    {
+      "Term": "low_vis",
+      "Adjusted_OR": 1.2160124002689792,
+      "CI_lower": 0.8293053581638442,
+      "CI_upper": 1.7830418470729121,
+      "Clustered_p": 0.3165776966799777
+    },
+    {
+      "Term": "strong_wind",
+      "Adjusted_OR": 1.2677050336218514,
+      "CI_lower": 1.1548944494668594,
+      "CI_upper": 1.3915350039235734,
+      "Clustered_p": 6.086656080345043e-07
+    },
+    {
+      "Term": "low_vis:strong_wind",
+      "Adjusted_OR": 1.5635986060814493,
+      "CI_lower": 0.946910176664762,
+      "CI_upper": 2.5819139567716434,
+      "Clustered_p": 0.08067466477654027
+    },
+    {
+      "Term": "precip_flag",
+      "Adjusted_OR": 1.7862921919079773,
+      "CI_lower": 1.5502731038283455,
+      "CI_upper": 2.058243664933448,
+      "Clustered_p": 1.0253984316511558e-15
+    }
+  ],
+  "route_prior_effective_flights": 200,
+  "schedule_source": "derived from actual clock and departure delay; no independent sched_dep_time"
+}

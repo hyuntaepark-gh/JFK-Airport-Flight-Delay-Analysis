@@ -1,0 +1,244 @@
+{
+  "months": [
+    {
+      "Month": 11,
+      "Flights": 8674,
+      "Observed late": 1129,
+      "Prevalence": 0.13015909614941204,
+      "Reviews in top 10%": 868,
+      "Late found": 139,
+      "Precision@10%": 0.16013824884792627,
+      "Precision lower 95%": 0.13724594634687515,
+      "Precision upper 95%": 0.18602562041479348,
+      "Recall@10%": 0.12311780336581045,
+      "Lift@10%": 1.2303269889343778
+    },
+    {
+      "Month": 12,
+      "Flights": 8963,
+      "Observed late": 2331,
+      "Prevalence": 0.26006917326787904,
+      "Reviews in top 10%": 897,
+      "Late found": 320,
+      "Precision@10%": 0.35674470457079155,
+      "Precision lower 95%": 0.32606708453448885,
+      "Precision upper 95%": 0.3886441366169323,
+      "Recall@10%": 0.13728013728013727,
+      "Lift@10%": 1.3717300673822415
+    }
+  ],
+  "cost_uncertainty": [
+    {
+      "Ratio": 2,
+      "Method": "Model",
+      "Point": -45.92617792141521,
+      "Lower 95%": -55.16081649374474,
+      "Upper 95%": -37.01568326754432,
+      "B": 500
+    },
+    {
+      "Ratio": 2,
+      "Method": "Random expected",
+      "Point": -60.774638141801724,
+      "Lower 95%": -65.97676052340117,
+      "Upper 95%": -55.61303239430875,
+      "B": 500
+    },
+    {
+      "Ratio": 2,
+      "Method": "Model minus random",
+      "Point": 14.848460220386514,
+      "Lower 95%": 10.433397390775394,
+      "Upper 95%": 19.361276249941746,
+      "B": 500
+    },
+    {
+      "Ratio": 5,
+      "Method": "Model",
+      "Point": 35.21006973975166,
+      "Lower 95%": 12.126770468751236,
+      "Upper 95%": 57.46928724803475,
+      "B": 500
+    },
+    {
+      "Ratio": 5,
+      "Method": "Random expected",
+      "Point": -1.9110808112146327,
+      "Lower 95%": -14.876643212125051,
+      "Upper 95%": 11.027796495546017,
+      "B": 500
+    },
+    {
+      "Ratio": 5,
+      "Method": "Model minus random",
+      "Point": 37.12115055096629,
+      "Lower 95%": 26.083493476938497,
+      "Upper 95%": 48.403190624854375,
+      "B": 500
+    },
+    {
+      "Ratio": 10,
+      "Method": "Model",
+      "Point": 170.4371491750298,
+      "Lower 95%": 124.27274873957786,
+      "Upper 95%": 214.9442381073332,
+      "B": 500
+    },
+    {
+      "Ratio": 10,
+      "Method": "Random expected",
+      "Point": 96.19484807309718,
+      "Lower 95%": 70.29021897333513,
+      "Upper 95%": 122.0798354511909,
+      "B": 500
+    },
+    {
+      "Ratio": 10,
+      "Method": "Model minus random",
+      "Point": 74.24230110193261,
+      "Lower 95%": 52.166986953876986,
+      "Upper 95%": 96.80638124970876,
+      "B": 500
+    }
+  ],
+  "holdout_repeatedly_inspected": true,
+  "original_sched_dep_time_available": false,
+  "subgroup_error_requires_caution": true,
+  "weather_audit": {
+    "Original weather rows": 13424,
+    "Unique weather timestamps": 13424,
+    "Duplicate weather rows (original)": 0,
+    "Duplicate timestamps (original)": 0,
+    "Ambiguous date-wrap flight rows withheld": 811,
+    "Flights eligible for matching": 108605,
+    "Independent scheduled timestamp in use": false,
+    "Weather timezone/DST externally verified": false
+  },
+  "data_drift_profile": [
+    {
+      "Period": "Train (Jan\u2013Aug)",
+      "N": 73855,
+      "Late 15+ rate": 0.23566447769277638,
+      "Distance mean (miles)": 1265.8083948277028,
+      "Distance median (miles)": 1069.0,
+      "Unique carriers": 10,
+      "Unique destinations": 68
+    },
+    {
+      "Period": "Validation (Sep\u2013Oct)",
+      "N": 17924,
+      "Late 15+ rate": 0.1384735550100424,
+      "Distance mean (miles)": 1287.6257531800936,
+      "Distance median (miles)": 1069.0,
+      "Unique carriers": 10,
+      "Unique destinations": 62
+    },
+    {
+      "Period": "Test (Nov\u2013Dec)",
+      "N": 17637,
+      "Late 15+ rate": 0.19617848840505756,
+      "Distance mean (miles)": 1302.816068492374,
+      "Distance median (miles)": 1069.0,
+      "Unique carriers": 10,
+      "Unique destinations": 65
+    }
+  ],
+  "carrier_level_calibration": [
+    {
+      "carrier": "B6",
+      "n": 6770,
+      "observed_count": 1540,
+      "observed_rate": 0.2274741506646972,
+      "mean_raw": 0.40171435351439033,
+      "mean_calibrated": 0.1780757935009446,
+      "observed_lo95": 0.21764468726442932,
+      "observed_hi95": 0.23761271395582034,
+      "raw_gap_pp": 17.424020284969313,
+      "calibrated_gap_pp": -4.93983571637526
+    },
+    {
+      "carrier": "DL",
+      "n": 3306,
+      "observed_count": 465,
+      "observed_rate": 0.14065335753176045,
+      "mean_raw": 0.29357491377193345,
+      "mean_calibrated": 0.1413121653914146,
+      "observed_lo95": 0.12921893507649607,
+      "observed_hi95": 0.15292190775209813,
+      "raw_gap_pp": 15.292155624017301,
+      "calibrated_gap_pp": 0.06588078596541647
+    },
+    {
+      "carrier": "AA",
+      "n": 2166,
+      "observed_count": 372,
+      "observed_rate": 0.17174515235457063,
+      "mean_raw": 0.2977257344275204,
+      "mean_calibrated": 0.14265086910050015,
+      "observed_lo95": 0.15644633296174756,
+      "observed_hi95": 0.1882062478895488,
+      "raw_gap_pp": 12.59805820729498,
+      "calibrated_gap_pp": -2.9094283254070485
+    },
+    {
+      "carrier": "9E",
+      "n": 2028,
+      "observed_count": 523,
+      "observed_rate": 0.2578895463510848,
+      "mean_raw": 0.44723010204872427,
+      "mean_calibrated": 0.1944414392164714,
+      "observed_lo95": 0.23931986182372395,
+      "observed_hi95": 0.27737471307191525,
+      "raw_gap_pp": 18.934055569763945,
+      "calibrated_gap_pp": -6.3448107134613405
+    },
+    {
+      "carrier": "MQ",
+      "n": 1219,
+      "observed_count": 247,
+      "observed_rate": 0.2026251025430681,
+      "mean_raw": 0.3857763277506499,
+      "mean_calibrated": 0.17282129665372392,
+      "observed_lo95": 0.18101097389878207,
+      "observed_hi95": 0.22610759018785875,
+      "raw_gap_pp": 18.31512252075818,
+      "calibrated_gap_pp": -2.980380588934417
+    },
+    {
+      "carrier": "UA",
+      "n": 753,
+      "observed_count": 104,
+      "observed_rate": 0.13811420982735723,
+      "mean_raw": 0.26328926357709026,
+      "mean_calibrated": 0.13112156773436384,
+      "observed_lo95": 0.11530203925685782,
+      "observed_hi95": 0.16459998824409883,
+      "raw_gap_pp": 12.517505374973304,
+      "calibrated_gap_pp": -0.6992642092993384
+    },
+    {
+      "carrier": "VX",
+      "n": 582,
+      "observed_count": 91,
+      "observed_rate": 0.1563573883161512,
+      "mean_raw": 0.33144604392403243,
+      "mean_calibrated": 0.1539515633929478,
+      "observed_lo95": 0.12911441438614726,
+      "observed_hi95": 0.18810700451922555,
+      "raw_gap_pp": 17.508865560788124,
+      "calibrated_gap_pp": -0.24058249232034035
+    },
+    {
+      "carrier": "US",
+      "n": 567,
+      "observed_count": 68,
+      "observed_rate": 0.11992945326278659,
+      "mean_raw": 0.22956074043519786,
+      "mean_calibrated": 0.11971051029181898,
+      "observed_lo95": 0.09571376978620835,
+      "observed_hi95": 0.1492604812249107,
+      "raw_gap_pp": 10.963128717241128,
+      "calibrated_gap_pp": -0.02189429709676116
+    }
+  ]
+}

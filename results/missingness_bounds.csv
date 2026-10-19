@@ -1,0 +1,4 @@
+Scenario,Numerator,Denominator,Rate
+Missing flights nonlate,23347,111279,0.20980598315944607
+Measured departures only,23347,109416,0.2133782993346494
+Missing flights late,25210,111279,0.22654768644578044

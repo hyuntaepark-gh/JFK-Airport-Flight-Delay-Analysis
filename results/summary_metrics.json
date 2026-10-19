@@ -1,0 +1,21 @@
+{
+  "records": 111279,
+  "recorded_departures": 109416,
+  "overall_late_rate": 0.2133782993346494,
+  "highest_route_n1000": "ORD",
+  "highest_route_rate": 0.3089612126616139,
+  "worst_day_n150": "2013-03-08",
+  "worst_day_rate": 0.618421052631579,
+  "adjusted_visibility_odds_ratio": 1.968913327104515,
+  "weather_95_ci": [
+    1.5340543616626565,
+    2.5270419266290984
+  ],
+  "model_selected_on_validation": "Logistic Regression",
+  "test_ap": 0.2523401984636132,
+  "baseline_test_ap": 0.19617848840505756,
+  "test_prevalence": 0.19617848840505756,
+  "train_n": 73855,
+  "validation_n": 17924,
+  "test_n": 17637
+}

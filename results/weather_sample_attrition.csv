@@ -1,0 +1,6 @@
+Stage,Flights,% of measured departures,Lost since previous stage
+Departure delay recorded,109416,100.0,0
+Clock-eligible for weather join,108605,99.26,811
+Preceding weather report found (<=90 min),108605,99.26,0
+Visibility available,88356,80.75,20249
+Visibility and wind available,88340,80.74,16

@@ -1,0 +1,4 @@
+Period,N,Late 15+ rate,Distance mean (miles),Distance median (miles),Unique carriers,Unique destinations
+Train (Jan–Aug),73855,0.23566447769277638,1265.8083948277028,1069.0,10,68
+Validation (Sep–Oct),17924,0.1384735550100424,1287.6257531800936,1069.0,10,62
+Test (Nov–Dec),17637,0.19617848840505756,1302.816068492374,1069.0,10,65
