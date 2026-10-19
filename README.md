@@ -254,19 +254,13 @@ JFK-Airport-Flight-Delay-Analysis/
 │
 ├── data/
 │   ├── jfk_flights.csv
-│   └── jfk_weather2013_2.csv
+│   └── jfk_weather2013.csv
 │
 ├── images/
 │   └── ... saved analysis visualizations
 │
-├── results/
-│   └── ... summary tables and model metrics
-│
-├── docs/
-│   └── MODEL_AND_DATA_NOTES.md
-│
-└── src/
-    └── merge_and_analyze.py
+└─── results/
+    └── ... summary tables and model metrics
 ```
 
 *The structure above shows the intended repository organization. Raw data files should only be published when their redistribution permissions have been confirmed. The legacy script in `src/` is not required to execute the main notebook.*
