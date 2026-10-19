@@ -11,11 +11,11 @@
 ![Time Series](https://img.shields.io/badge/Time--Based-Analysis-00897B)
 ![Aviation Analytics](https://img.shields.io/badge/Aviation-Analytics-2E7D32)
 
-This project examines **flight delays at John F. Kennedy International Airport (JFK)** using historical flight and weather data from 2013.
+This project analyzes **flight delays at John F. Kennedy International Airport (JFK)** using historical flight and weather data from 2013.
 
-The analysis explores how departure delays vary across airlines, destinations, and time periods, and whether historical flight information can help identify flights with a higher risk of delay.
+The analysis examines how departure delays vary across airlines, destinations, and time periods, and explores whether information available before departure can help identify flights with a higher risk of delay.
 
-Along with exploratory data analysis, the project includes statistical modeling, machine learning, weather-related comparisons, and model validation. Particular attention is given to data quality and the limitations of the available records.
+Beyond exploratory data analysis, the project includes statistical modeling, machine learning, weather-related comparisons, and model validation. It also examines how missing data, weather matching, and model limitations affect the reliability of the findings.
 
 ---
 
@@ -23,80 +23,82 @@ Along with exploratory data analysis, the project includes statistical modeling,
 
 ### Objective
 
-- Analyze historical departure delays at JFK Airport.
-- Identify differences in delay patterns across airlines, routes, and time periods.
-- Examine relationships between recorded weather conditions and flight delays.
-- Evaluate whether pre-departure information can help rank flights by delay risk.
-- Assess model performance, uncertainty, and data limitations.
+- Analyze historical flight delay patterns at JFK Airport.
+- Identify differences in delay rates across airlines, routes, and time periods.
+- Explore associations between weather conditions and departure delays.
+- Evaluate machine learning models for ranking departure delay risk.
+- Assess data quality, model performance, and prediction uncertainty.
 
 ### Key Questions
 
 1. Which airlines, routes, and time periods experienced higher departure delay rates?
 2. Were extreme delays concentrated on particular days, and how did departure delays change by arrival?
-3. How were recorded weather conditions associated with delays?
+3. How were recorded weather conditions associated with flight delays?
 4. Can statistical and machine learning models identify flights with higher delay risk?
-5. How reliable are these findings across different evaluation periods and data-quality conditions?
+5. How reliable are these results across different periods and data-quality conditions?
 
 ### Dataset Overview
 
 | Dataset | Description |
 |---|---|
-| `jfk_flights.csv` | 111,279 historical JFK departure records from 2013 |
-| `jfk_weather2013_2.csv` | 13,424 historical weather observations associated with JFK |
+| `jfk_flights.csv` | 111,279 JFK departure records from 2013 |
+| `jfk_weather2013_2.csv` | 13,424 historical JFK weather observations |
 | Analysis period | January–December 2013 |
 | Primary target | Departure delay of at least 15 minutes |
 | Historical test period | November–December 2013 |
 
 Of the 111,279 flight records, 109,416 contain a measured departure delay. Records without a measured delay are not automatically classified as canceled flights.
 
-The historical data were used for retrospective analysis rather than real-time flight prediction.
+The project focuses on retrospective analysis rather than real-time flight prediction.
 
 ---
 
 ## 🧠 Methodology
 
-### 1. Data Collection & Preparation
+### 1. Data Cleaning & Preparation
 
-- Loaded historical flight and weather datasets.
-- Inspected missing values, data types, and inconsistent records.
-- Prepared date and time variables for exploratory analysis.
-- Created departure delay categories and indicators.
-- Examined missing departure-delay records separately.
+The flight and weather datasets were inspected and prepared for analysis.
+
+- Examined missing values, data types, and inconsistent records.
+- Standardized date and time fields.
+- Created departure delay indicators and severity categories.
+- Compared records with and without measured departure delays.
 - Reviewed weather matching coverage and sample selection.
+- Checked how data limitations could affect the analysis.
 
-The flight dataset does not provide an independently recorded scheduled departure timestamp. Reconstructed time information is used only for descriptive analysis, not as an input to prospective delay prediction.
+The flight dataset does not contain an independently recorded scheduled departure timestamp. Reconstructed departure times are used for descriptive analysis only, not as prospective prediction features.
 
 ### 2. Exploratory Data Analysis (EDA)
 
-Exploratory analysis examines how delay patterns differ across the historical data.
+Exploratory analysis examines how departure delays differ across the historical flight records.
 
-Key areas include:
+The analysis includes:
 
-- Monthly and daily departure delay trends.
+- Monthly and daily delay trends.
 - Airline-level delay comparisons.
-- Destination and route-level differences.
+- Destination and route-level delay patterns.
 - Delay distributions and extreme-delay events.
 - Departure and arrival delay comparisons.
-- Aircraft delay persistence within observed JFK records.
+- Aircraft delay persistence across observed JFK departures.
 
-### 3. Weather and Statistical Analysis
+### 3. Weather & Statistical Analysis
 
-Historical JFK weather observations were examined alongside flight records to study associations between weather conditions and departure delays.
+Historical weather observations were matched with flight records to examine possible relationships between weather conditions and delays.
 
 The analysis includes:
 
 - Visibility, wind speed, temperature, and precipitation comparisons.
 - Weather observation matching and timestamp sensitivity checks.
-- Missing-weather measurements and sample attrition.
-- Logistic regression with airline, route, and calendar controls.
-- Adjusted odds ratios and confidence intervals.
+- Missing weather measurements and sample attrition.
+- Adjusted logistic regression models.
+- Odds ratios and confidence intervals.
 - Weather interaction analysis.
 
-Weather findings are observational. Incomplete weather measurements, uncertain timestamp conventions, and selection effects limit how broadly the results can be interpreted.
+Weather-related findings are observational. Unverified timestamp conventions and incomplete weather measurements limit how broadly the results can be interpreted.
 
 ### 4. Machine Learning & Prediction
 
-Two classification models were evaluated for identifying flights with a higher probability of departing at least 15 minutes late:
+Two classification models were evaluated for predicting whether a flight would depart at least 15 minutes late.
 
 - **Logistic Regression**
 - **Gradient Boosting**
@@ -104,30 +106,30 @@ Two classification models were evaluated for identifying flights with a higher p
 The modeling workflow includes:
 
 - Chronological training, validation, and testing.
-- Model comparison using ROC-AUC and Average Precision.
+- ROC-AUC and Average Precision evaluation.
 - Precision–Recall curve analysis.
 - Probability calibration.
-- Feature importance and ablation checks.
+- Feature importance and feature ablation.
 - High-risk flight ranking.
-- Prediction error analysis.
+- Subgroup error analysis.
 
-Additional experiments examine severe delays of 60 and 120 minutes and use quantile regression to estimate different levels of positive departure delay.
+Additional experiments examine delays of 60 and 120 minutes, along with quantile regression for positive departure delays.
 
 ### 5. Model Validation & Robustness
 
-Model evaluation extends beyond a single performance score.
+Model evaluation extends beyond a single accuracy metric.
 
 The notebook includes:
 
 - Expanding-window validation.
 - Bootstrap confidence intervals.
 - Probability calibration and Brier Score comparisons.
-- Airline-level error and calibration checks.
+- Airline-level calibration and error checks.
 - Data drift analysis.
 - Weather matching sensitivity tests.
-- Illustrative cost and decision-threshold scenarios.
+- Illustrative operational cost scenarios.
 
-The November–December 2013 test period was reviewed during project development. Results from that period should therefore be interpreted as retrospective evaluations rather than a fresh, independent external validation.
+The November–December 2013 test period was reviewed during project development. Results from that period are retrospective and should not be treated as a new, independent external validation.
 
 ---
 
@@ -135,23 +137,23 @@ The November–December 2013 test period was reviewed during project development
 
 ### 1. Departure Delay Patterns
 
-- The overall 15-minute departure delay rate among flights with recorded delay values was approximately **21.3%**.
-- Delay patterns varied across airlines, destinations, and time periods.
-- Extreme delays were not evenly distributed throughout the year.
+Approximately **21.3%** of flights with a recorded departure delay were delayed by at least 15 minutes.
 
-These results describe historical patterns rather than current JFK operating conditions.
+Delay rates varied across airlines, destinations, and time periods. Extreme delays were also concentrated on certain days rather than evenly distributed throughout the year.
 
-### 2. Weather Data Quality Matters
+These findings describe historical 2013 conditions rather than current JFK operations.
 
-Weather analysis required additional filtering and matching.
+### 2. Weather Analysis Requires Careful Data Selection
 
-- 108,605 flights remained eligible after the estimated flight-clock checks.
-- 88,340 flights had the visibility and wind measurements needed for the main adjusted weather regression.
+Weather analysis involved additional data filtering and matching.
+
+- **108,605 flights** remained eligible after estimated flight-clock checks.
+- **88,340 flights** had the visibility and wind measurements required for the main adjusted weather regression.
 - Flights excluded near ambiguous date boundaries had substantially higher observed delay rates.
 
-This means weather-related results describe a selected subset of flights rather than every recorded JFK departure.
+As a result, the weather analysis describes a selected subset of flights rather than the entire JFK dataset.
 
-### 3. Predictive Models Show Limited but Measurable Signal
+### 3. Machine Learning Models Identified Some Delay Risk
 
 The historical test results were:
 
@@ -164,45 +166,83 @@ The historical test results were:
 | Brier Score before calibration | 0.182 |
 | Brier Score after Platt calibration | 0.157 |
 
-Logistic Regression performed better than Gradient Boosting on Average Precision in the historical test period.
+Logistic Regression achieved higher Average Precision than Gradient Boosting during the historical test period.
 
-Although the models identified some differences in delay risk, their performance was not strong enough to support a reliable operational alert system.
+Although the models showed some ability to identify higher-risk flights, their predictive performance remained limited.
 
-### 4. Higher Predicted Risk Does Not Guarantee a Delay
+### 4. Higher Predicted Risk Did Not Always Mean a Delay
 
-The highest-scored 10% of test flights had an observed departure delay rate of approximately **27.0%**, compared with 19.6% across the full test period.
+The highest-scored 10% of test flights had an observed delay rate of approximately **27.0%**, compared with 19.6% across the full test period.
 
-This suggests some ability to rank historical flight risk, but it does not establish that the predictions would remain accurate in future years.
+This represents about 1.38 times the overall test-period rate.
 
-### 5. Model Reliability Requires More Than Accuracy
+The result suggests some ability to rank historical delay risk, but it does not guarantee reliable predictions for future flights.
 
-Probability calibration improved the historical Brier Score, but subgroup analyses still revealed substantial prediction errors for some airlines.
+### 5. Model Reliability Matters
 
-The results highlight the importance of checking calibration, false alarms, data completeness, and changes in model performance over time.
+Probability calibration improved the historical Brier Score, but some airline groups still showed high false-alarm rates.
+
+The results demonstrate why model performance should be evaluated using calibration, subgroup errors, data completeness, and time-based validation rather than a single metric.
 
 ---
 
 ## 📈 Data Visualization
 
-### Executive Summary
+The complete analysis generated **39 finalized visualizations** covering flight delay patterns, weather conditions, statistical relationships, model performance, and validation.
+
+All finalized charts are available in the `images/` directory. The following figures highlight the main findings.
+
+### 1. Executive Summary
 
 ![JFK Flight Delay Executive Summary](images/33_executive_summary_final.png)
 
 The executive summary brings together the main delay patterns, model results, and limitations of the historical analysis.
 
-### Flight Delay Prediction — ROC and Precision–Recall
+### 2. Flight Delay Prediction — ROC & Precision–Recall
 
-![JFK Delay Prediction Performance](images/14_prediction_roc_pr.png)
+![JFK Flight Delay Prediction](images/14_prediction_roc_pr.png)
 
-The ROC and Precision–Recall curves compare the classification models against historical reference performance. The Precision–Recall baseline represents the observed delay rate in the test period.
+The ROC and Precision–Recall curves compare Logistic Regression and Gradient Boosting against historical reference performance.
 
-### Weather Matching Sensitivity
+The Precision–Recall baseline represents the observed delay rate in the test period.
+
+### 3. Weather Conditions & Adjusted Delay Odds
+
+![Adjusted Weather Odds Ratios](images/13_adjusted_weather_odds_ratios.png)
+
+Adjusted odds ratios illustrate associations between selected weather conditions and departure delays after accounting for other recorded factors.
+
+These associations should not be interpreted as causal effects.
+
+### 4. Rolling Model Validation
+
+![Rolling Model Validation](images/20_rolling_validation.png)
+
+Expanding-window validation examines how model performance changes across different historical evaluation periods.
+
+This provides additional context beyond the November–December test results.
+
+### 5. Weather Matching Sensitivity
 
 ![Weather Matching Sensitivity](images/22_weather_matching_sensitivity.png)
 
-This analysis examines how changes in the weather observation matching window affect both the estimated delay-rate differences and the number of flights with usable weather measurements.
+This analysis compares how different weather matching windows and estimated time shifts affect both delay-rate contrasts and the number of flights with usable weather measurements.
 
-Additional visualizations, including airline comparisons, adjusted weather odds ratios, probability calibration, and model diagnostics, are available in the notebook and `images/` directory.
+### 6. Weather Selection Bias
+
+![Weather Selection Bias](images/38_weather_selection_bias.png)
+
+The analysis shows how flights excluded by estimated-clock restrictions differ from flights retained for weather comparisons.
+
+These differences matter when interpreting weather-related findings.
+
+### 7. Model Errors Across Airline Groups
+
+![Model Error Analysis](images/30_model_error_subgroups.png)
+
+Subgroup analysis examines differences in prediction errors across airlines and highlights limitations that overall performance metrics may not reveal.
+
+**Additional visualizations**, including airline comparisons, delay severity, probability calibration, feature importance, bootstrap uncertainty, and aircraft delay persistence, are available in the `images/` directory and the full Jupyter Notebook.
 
 ---
 
@@ -254,16 +294,21 @@ JFK-Airport-Flight-Delay-Analysis/
 │
 ├── data/
 │   ├── jfk_flights.csv
-│   └── jfk_weather2013.csv
+│   └── jfk_weather2013_2.csv
 │
 ├── images/
-│   └── ... saved analysis visualizations
+│   └── ... 39 finalized PNG visualizations
 │
-└─── results/
-    └── ... summary tables and model metrics
+└── results/
+    └── ... analysis tables and model metrics (CSV / JSON)
+
 ```
 
-*The structure above shows the intended repository organization. Raw data files should only be published when their redistribution permissions have been confirmed. The legacy script in `src/` is not required to execute the main notebook.*
+The `images/` directory contains the finalized analysis figures, while `results/` stores supporting summary tables and model outputs.
+
+The script in `src/` is a legacy analysis file and is not required to execute the main notebook.
+
+Raw CSV files should only be included in a public repository after their redistribution permissions have been confirmed. If excluded, they must be obtained separately and placed in `data/` before running the notebook.
 
 ---
 
@@ -271,7 +316,7 @@ JFK-Airport-Flight-Delay-Analysis/
 
 ### 1. Install the Required Libraries
 
-Install the Python dependencies:
+Clone or download the repository and install the required Python packages.
 
 ```bash
 pip install -r requirements.txt
@@ -279,7 +324,7 @@ pip install -r requirements.txt
 
 ### 2. Prepare the Dataset
 
-Place the required CSV files in the `data/` directory:
+Place the following CSV files in the `data/` directory:
 
 ```text
 data/
@@ -287,49 +332,45 @@ data/
 └── jfk_weather2013_2.csv
 ```
 
-The filenames must match the names expected by the notebook.
+The filenames must match those expected by the notebook.
 
-### 3. Open the Notebook
+### 3. Open the Jupyter Notebook
 
 ```bash
 jupyter notebook notebooks/JFK_Flight_Delay_Analysis.ipynb
 ```
 
-Run the cells in order.
+Run the notebook cells in order.
 
-The notebook supports the project directory structure shown above and can also locate data in the original Windows workspace:
+The notebook supports the repository folder structure shown above. It also includes a local Windows data path fallback for the original analysis workspace.
 
-```text
-I:\Dataset\JFK Airport Webscraping
-```
-
-Generated figures and analysis tables are saved in the appropriate output directories.
+Generated charts and analysis tables are saved to the corresponding output directories.
 
 ---
 
 ## ⚠️ Limitations
 
-Several limitations should be considered when interpreting the analysis.
+The analysis has several important limitations.
 
-- **Historical scope:** The findings are based on 2013 flights and should not be assumed to represent current JFK operations.
+- **Historical scope:** Results describe 2013 flight records and should not be assumed to represent current JFK operations.
 - **Data provenance:** The exact archived source and redistribution permissions of the saved CSV files have not been independently verified.
-- **Flight timestamps:** Independently recorded scheduled departure times are unavailable in the flight file.
-- **Weather timestamps:** The timezone and daylight-saving conventions of the weather observations have not been verified.
+- **Flight timestamps:** Independently recorded scheduled departure times are unavailable.
+- **Weather timestamps:** Weather observation timezone and daylight-saving conventions have not been verified.
 - **Sample selection:** Weather analysis excludes records with uncertain time alignment or incomplete measurements.
-- **Causality:** Associations between weather conditions and delays do not establish causal relationships.
-- **Model validation:** The historical test period was examined during development and is not a new external holdout.
-- **Operational use:** The models have not been validated for real-time deployment. Cost scenarios are illustrative rather than measured financial savings.
+- **Causality:** Statistical relationships between weather conditions and delays do not establish causal effects.
+- **Model validation:** The historical test period was reviewed during development and is not a new external holdout.
+- **Operational use:** The predictive models have not been validated for real-time deployment. Cost scenarios are illustrative, not measured financial savings.
 
-Future analysis would benefit from verified scheduled departure times, confirmed weather timestamps, additional years of flight data, and independent model validation.
+Future improvements would require verified scheduled departure times, confirmed weather timestamps, additional flight records from other years, and independent model validation.
 
 ---
 
 ## 📌 Conclusion
 
-The 2013 JFK data reveal differences in flight delay patterns across airlines, destinations, and time periods.
+The analysis identifies differences in historical JFK flight delays across airlines, destinations, and time periods.
 
-Statistical analysis provides additional context for weather-related delay patterns, while machine learning models show a modest ability to distinguish between lower-risk and higher-risk departures.
+Statistical modeling provides additional context for weather-related delay patterns, while machine learning models show a modest ability to rank flights by departure delay risk.
 
-The project also demonstrates why data quality, sample selection, model calibration, and validation methods matter when evaluating predictive results.
+The project also highlights the importance of data quality, sample selection, calibration, and model validation when interpreting predictive results.
 
-Overall, the analysis provides a retrospective examination of JFK flight delays and illustrates both the value and limitations of using historical aviation data for statistical and predictive modeling.
+Overall, the findings provide a retrospective view of JFK flight delays and demonstrate both the usefulness and limitations of historical aviation data for statistical analysis and predictive modeling.
